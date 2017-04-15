@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/zeit/serve#readme"
-
-    >serve (v5.1.4)</a>
+    <a href="https://github.com/zeit/serve#readme">serve (v5.1.4)</a>
 </h1>
 <h4>Static file serving and directory listing</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.serve">module serve</a><ol>
 
@@ -94,22 +87,22 @@
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(directory = process.cwd(), options = {}) =&#x3e; {
-  const scriptPath = path.join(__dirname, &#x27;..&#x27;, &#x27;bin&#x27;, &#x27;serve.js&#x27;);
-  const aliases = { cors: &#x27;o&#x27; };
+    <li>description and source-code<pre class="apidocCodePre">(directory = process.cwd(), options = {}) =&gt; {
+  const scriptPath = path.join(__dirname, '..', 'bin', 'serve.js');
+  const aliases = { cors: 'o' };
 
   options._ = [directory]; // Let dargs handle the directory argument
 
   // The CLI only understands comma-separated values for ignored files
   // So we join the string array with commas
   if (options.ignore) {
-    options.ignore = options.ignore.join(&#x27;,&#x27;);
+    options.ignore = options.ignore.join(',');
   }
 
   const args = [scriptPath, ...dargs(options, { aliases })];
 
-  const cli = spawn(&#x27;node&#x27;, args, {
-    stdio: &#x27;inherit&#x27;
+  const cli = spawn('node', args, {
+    stdio: 'inherit'
   });
 
   return {
@@ -145,3 +138,4 @@
     ]
 </div>
 </div>
+</body></html>

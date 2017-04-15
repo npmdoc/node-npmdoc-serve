@@ -51,7 +51,7 @@
 
         href="https://github.com/zeit/serve#readme"
 
-    >serve (v5.1.2)</a>
+    >serve (v5.1.4)</a>
 </h1>
 <h4>Static file serving and directory listing</h4>
 <div class="apidocSectionDiv"><a
@@ -61,12 +61,81 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.serve">module serve</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.serve">
+            function <span class="apidocSignatureSpan"></span>serve
+            <span class="apidocSignatureSpan">(directory = process.cwd()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.toString">
+            function <span class="apidocSignatureSpan">serve.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.serve" id="apidoc.module.serve">module serve</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.serve.serve" id="apidoc.element.serve.serve">
+        function <span class="apidocSignatureSpan"></span>serve
+        <span class="apidocSignatureSpan">(directory = process.cwd()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(directory = process.cwd(), options = {}) =&#x3e; {
+  const scriptPath = path.join(__dirname, &#x27;..&#x27;, &#x27;bin&#x27;, &#x27;serve.js&#x27;);
+  const aliases = { cors: &#x27;o&#x27; };
+
+  options._ = [directory]; // Let dargs handle the directory argument
+
+  // The CLI only understands comma-separated values for ignored files
+  // So we join the string array with commas
+  if (options.ignore) {
+    options.ignore = options.ignore.join(&#x27;,&#x27;);
+  }
+
+  const args = [scriptPath, ...dargs(options, { aliases })];
+
+  const cli = spawn(&#x27;node&#x27;, args, {
+    stdio: &#x27;inherit&#x27;
+  });
+
+  return {
+    stop() {
+      cli.kill();
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.serve.toString" id="apidoc.element.serve.toString">
+        function <span class="apidocSignatureSpan">serve.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return toString;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

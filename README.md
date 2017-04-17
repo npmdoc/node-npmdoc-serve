@@ -3,7 +3,9 @@
 
 [![NPM](https://nodei.co/npm/serve.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/serve)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-serve/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-serve/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-serve/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-serve/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-serve/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-serve/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-serve/build/screenCapture.npmPackageListing.svg)
 
@@ -108,63 +110,6 @@
         "extends": "prettier"
     }
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module serve](#apidoc.module.serve)
-1.  [function <span class="apidocSignatureSpan"></span>serve (directory = process.cwd()](#apidoc.element.serve.serve)
-1.  [function <span class="apidocSignatureSpan">serve.</span>toString ()](#apidoc.element.serve.toString)
-
-
-
-# <a name="apidoc.module.serve"></a>[module serve](#apidoc.module.serve)
-
-#### <a name="apidoc.element.serve.serve"></a>[function <span class="apidocSignatureSpan"></span>serve (directory = process.cwd()](#apidoc.element.serve.serve)
-- description and source-code
-```javascript
-(directory = process.cwd(), options = {}) => {
-  const scriptPath = path.join(__dirname, '..', 'bin', 'serve.js');
-  const aliases = { cors: 'o' };
-
-  options._ = [directory]; // Let dargs handle the directory argument
-
-  // The CLI only understands comma-separated values for ignored files
-  // So we join the string array with commas
-  if (options.ignore) {
-    options.ignore = options.ignore.join(',');
-  }
-
-  const args = [scriptPath, ...dargs(options, { aliases })];
-
-  const cli = spawn('node', args, {
-    stdio: 'inherit'
-  });
-
-  return {
-    stop() {
-      cli.kill();
-    }
-  };
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.serve.toString"></a>[function <span class="apidocSignatureSpan">serve.</span>toString ()](#apidoc.element.serve.toString)
-- description and source-code
-```javascript
-toString = function () {
-    return toString;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 

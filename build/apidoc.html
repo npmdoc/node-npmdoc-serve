@@ -72,8 +72,118 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.serve.api">
+            function <span class="apidocSignatureSpan">serve.</span>api
+            <span class="apidocSignatureSpan">(directory = process.cwd()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.listening">
+            function <span class="apidocSignatureSpan">serve.</span>listening
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.render">
+            function <span class="apidocSignatureSpan">serve.</span>render
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.server">
+            function <span class="apidocSignatureSpan">serve.</span>server
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.serve.toString">
             function <span class="apidocSignatureSpan">serve.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.view">
+            function <span class="apidocSignatureSpan">serve.</span>view
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.serve.listening">module serve.listening</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.listening.listening">
+            function <span class="apidocSignatureSpan">serve.</span>listening
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.serve.render">module serve.render</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.render.render">
+            function <span class="apidocSignatureSpan">serve.</span>render
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.serve.server">module serve.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.server.server">
+            function <span class="apidocSignatureSpan">serve.</span>server
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.serve.toString">module serve.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.toString.toString">
+            function <span class="apidocSignatureSpan">serve.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.serve.view">module serve.view</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.serve.view.view">
+            function <span class="apidocSignatureSpan">serve.</span>view
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -124,6 +234,105 @@
 
 
     <h2>
+        <a href="#apidoc.element.serve.api" id="apidoc.element.serve.api">
+        function <span class="apidocSignatureSpan">serve.</span>api
+        <span class="apidocSignatureSpan">(directory = process.cwd()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(directory = process.cwd(), options = {}) =&#x3e; {
+  const scriptPath = path.join(__dirname, &#x27;..&#x27;, &#x27;bin&#x27;, &#x27;serve.js&#x27;);
+  const aliases = { cors: &#x27;o&#x27; };
+
+  options._ = [directory]; // Let dargs handle the directory argument
+
+  // The CLI only understands comma-separated values for ignored files
+  // So we join the string array with commas
+  if (options.ignore) {
+    options.ignore = options.ignore.join(&#x27;,&#x27;);
+  }
+
+  const args = [scriptPath, ...dargs(options, { aliases })];
+
+  const cli = spawn(&#x27;node&#x27;, args, {
+    stdio: &#x27;inherit&#x27;
+  });
+
+  return {
+    stop() {
+      cli.kill();
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.serve.listening" id="apidoc.element.serve.listening">
+        function <span class="apidocSignatureSpan">serve.</span>listening
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listening = function () {
+    var generator = generatorFunction.apply(this, arguments);
+    var spawn = new PromiseSpawn$(undefined, undefined, yieldHandler,
+                                  stack);
+    var ret = spawn.promise();
+    spawn._generator = generator;
+    spawn._promiseFulfilled(undefined);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.serve.render" id="apidoc.element.serve.render">
+        function <span class="apidocSignatureSpan">serve.</span>render
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function () {
+    var generator = generatorFunction.apply(this, arguments);
+    var spawn = new PromiseSpawn$(undefined, undefined, yieldHandler,
+                                  stack);
+    var ret = spawn.promise();
+    spawn._generator = generator;
+    spawn._promiseFulfilled(undefined);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.serve.server" id="apidoc.element.serve.server">
+        function <span class="apidocSignatureSpan">serve.</span>server
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">server = function () {
+    var generator = generatorFunction.apply(this, arguments);
+    var spawn = new PromiseSpawn$(undefined, undefined, yieldHandler,
+                                  stack);
+    var ret = spawn.promise();
+    spawn._generator = generator;
+    spawn._promiseFulfilled(undefined);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.serve.toString" id="apidoc.element.serve.toString">
         function <span class="apidocSignatureSpan">serve.</span>toString
         <span class="apidocSignatureSpan">()</span>
@@ -131,7 +340,156 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return toString;
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.serve.view" id="apidoc.element.serve.view">
+        function <span class="apidocSignatureSpan">serve.</span>view
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&#x3e; {
+  let viewContent = false;
+  const viewPath = path.normalize(path.join(__dirname, &#x27;/../views/index.hbs&#x27;));
+
+  try {
+    viewContent = fs.readFileSync(viewPath, &#x27;utf8&#x27;);
+  } catch (err) {
+    throw err;
+  }
+
+  return compile(viewContent);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.serve.listening" id="apidoc.module.serve.listening">module serve.listening</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.serve.listening.listening" id="apidoc.element.serve.listening.listening">
+        function <span class="apidocSignatureSpan">serve.</span>listening
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listening = function () {
+    var generator = generatorFunction.apply(this, arguments);
+    var spawn = new PromiseSpawn$(undefined, undefined, yieldHandler,
+                                  stack);
+    var ret = spawn.promise();
+    spawn._generator = generator;
+    spawn._promiseFulfilled(undefined);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.serve.render" id="apidoc.module.serve.render">module serve.render</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.serve.render.render" id="apidoc.element.serve.render.render">
+        function <span class="apidocSignatureSpan">serve.</span>render
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function () {
+    var generator = generatorFunction.apply(this, arguments);
+    var spawn = new PromiseSpawn$(undefined, undefined, yieldHandler,
+                                  stack);
+    var ret = spawn.promise();
+    spawn._generator = generator;
+    spawn._promiseFulfilled(undefined);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.serve.server" id="apidoc.module.serve.server">module serve.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.serve.server.server" id="apidoc.element.serve.server.server">
+        function <span class="apidocSignatureSpan">serve.</span>server
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">server = function () {
+    var generator = generatorFunction.apply(this, arguments);
+    var spawn = new PromiseSpawn$(undefined, undefined, yieldHandler,
+                                  stack);
+    var ret = spawn.promise();
+    spawn._generator = generator;
+    spawn._promiseFulfilled(undefined);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.serve.toString" id="apidoc.module.serve.toString">module serve.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.serve.toString.toString" id="apidoc.element.serve.toString.toString">
+        function <span class="apidocSignatureSpan">serve.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.serve.view" id="apidoc.module.serve.view">module serve.view</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.serve.view.view" id="apidoc.element.serve.view.view">
+        function <span class="apidocSignatureSpan">serve.</span>view
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&#x3e; {
+  let viewContent = false;
+  const viewPath = path.normalize(path.join(__dirname, &#x27;/../views/index.hbs&#x27;));
+
+  try {
+    viewContent = fs.readFileSync(viewPath, &#x27;utf8&#x27;);
+  } catch (err) {
+    throw err;
+  }
+
+  return compile(viewContent);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>

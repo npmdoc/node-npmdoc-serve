@@ -1,4 +1,7 @@
-# api documentation for  [serve (v5.1.4)](https://github.com/zeit/serve#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-serve.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-serve) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-serve.svg)](https://travis-ci.org/npmdoc/node-npmdoc-serve)
+# npmdoc-serve
+
+#### basic api documentation for  [serve (v5.1.4)](https://github.com/zeit/serve#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-serve.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-serve) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-serve.svg)](https://travis-ci.org/npmdoc/node-npmdoc-serve)
+
 #### Static file serving and directory listing
 
 [![NPM](https://nodei.co/npm/serve.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/serve)
